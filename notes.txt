@@ -1,0 +1,4 @@
+** Para prodar o projeto react
+ - npm start
+ ** instalar o react icons
+ - npm install react-icons --save
