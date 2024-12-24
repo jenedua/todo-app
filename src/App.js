@@ -84,17 +84,22 @@ function App() {
     updateTodo[index] = currentEditedItem;
     setAllTodos(updateTodo);
     setCurrentEdit("");
+    localStorage.setItem('updateList', JSON.stringify(updateTodo));
   }
 
   useEffect(() => {
     let savedTodo = localStorage.getItem('todoList');
     let savedCompletedTodo = localStorage.getItem('completedTodos');
+    let savedUpdateTodo = localStorage.getItem('updateList');
     if (savedTodo) {
       setAllTodos(JSON.parse(savedTodo));
     }
     if (savedCompletedTodo) {
       setCompletedTodos(JSON.parse(savedCompletedTodo));
     } 
+    if (savedUpdateTodo) {
+      setAllTodos(JSON.parse(savedUpdateTodo));
+    }
 
   }, [])
   return (
